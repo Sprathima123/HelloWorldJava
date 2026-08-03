@@ -9,8 +9,8 @@ pipeline {
             }
             steps {
                 echo 'Running stage for Pull Request creation/update...'
-                echo 'pr sourve branch: ${env.CHANGE_BRANCH}'
-                echo 'commit id: ${env.GIT_COMMIT}'
+                echo "pr sourve branch: ${env.CHANGE_BRANCH}"
+                echo "commit id: ${env.GIT_COMMIT}"
                 // Add your PR build, test, or linting steps here
             }
         }
