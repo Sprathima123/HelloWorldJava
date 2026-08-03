@@ -16,8 +16,10 @@ pipeline {
         // Stage 2: Triggers ONLY on direct commits to the main branch
         stage('Main Branch Commit Stage') {
             when {
+                anyOf{
                     branch 'main'
                     branch 'DEV'
+                }
                 }
             steps {
                 echo 'Running stage for direct commit to main branch...'
