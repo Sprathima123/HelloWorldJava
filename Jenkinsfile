@@ -17,6 +17,7 @@ pipeline {
         stage('Main Branch Commit Stage') {
             when {
                     branch 'main'
+                    branch 'DEV'
                 }
             steps {
                 echo 'Running stage for direct commit to main branch...'
