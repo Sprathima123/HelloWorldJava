@@ -13,8 +13,11 @@ pipeline {
                 echo "commit id: ${env.GIT_COMMIT}"
                 echo "build url: ${env.BUILD_URL}"
                 echo "git url: ${env.GIT_URL}"
-                String url = ${env.GIT_URL}
+                script {
+                String url = env.GIT_URL
                 def repoName = url.tokenize('/')[-1].replace('.git', '')
+                echo "Repository name: ${repoName}"
+                }
 
             // Add your PR build, test, or linting steps here
             }
