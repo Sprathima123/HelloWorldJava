@@ -11,12 +11,9 @@ pipeline {
                 echo 'Running stage for Pull Request creation/update...'
                 echo "pr sourve branch: ${env.CHANGE_BRANCH}"
                 echo "commit id: ${env.GIT_COMMIT}"
-                echo "commit id: ${env.BUILD_URL}"
-            sh '''
-                REPONAME=$(basename "${GIT_URL}" .git)
-                echo "Repository name is: $REPONAME"
-                # Execute remaining shell commands here using $REPONAME
-            '''
+                echo "build url: ${env.BUILD_URL}"
+                echo "git url: ${env.GIT_URL}"
+
             // Add your PR build, test, or linting steps here
             }
         }
