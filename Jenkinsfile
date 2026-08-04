@@ -12,7 +12,12 @@ pipeline {
                 echo "pr sourve branch: ${env.CHANGE_BRANCH}"
                 echo "commit id: ${env.GIT_COMMIT}"
                 echo "commit id: ${env.BUILD_URL}"
-                // Add your PR build, test, or linting steps here
+            sh '''
+                REPONAME=$(basename "${GIT_URL}" .git)
+                echo "Repository name is: $REPONAME"
+                # Execute remaining shell commands here using $REPONAME
+            '''
+            // Add your PR build, test, or linting steps here
             }
         }
 
